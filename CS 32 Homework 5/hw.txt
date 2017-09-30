@@ -1,0 +1,110 @@
+Lisa Chong
+Professor Smallberg
+March 15, 2017
+
+1a.
+                 50
+           20         60
+      10       40       70
+        15   30       65  80
+            25 35        75
+
+1b.
+In-order: 10-15-20-25-30-35-40-50-60-65-70-75-80
+Pre-order: 50-20-10-15-40-30-25-35-60-70-65-80-75
+Post-order: 15-10-25-35-30-40-20-35-75-80-70-60-50
+
+1c.
+Deleting 30
+                 50
+           20         60
+      10       40       70
+        15   25       65  80
+               35        75
+Deleting 20
+                 50
+           15         60
+      10       40       70
+             25       65  80
+               35        75
+
+2a.
+class Node
+
+{
+
+public:
+
+	Node(int k)
+
+		: m_left(nullptr), m_right(nullptr), m_parent(nullptr), m_value(k) {};
+
+	Node* left()
+ { return m_left; }
+
+	Node* right()
+ { return m_right; }
+
+	Node* parent()
+ { return m_parent; }
+
+	int value()
+ { return m_value; }
+
+private:
+
+	Node* m_root;
+	Node* m_left;
+
+	Node* m_right;
+	Node* m_parent;
+	int m_value;
+};
+
+2b.
+insert Node(k)
+	if m_root == nullptr
+		set m_root to a new node of value k.
+Create a current pointer to the null
+for until a new Node is inserted (;;)
+	if this value is larger than or equal to the value of the current Node
+		if the right node is null
+			create a temporary pointer to this current node
+			make right node point at new Node
+			set the right node's parent pointer to the temporary one
+		else
+			set the current node to the right node pointer
+			return
+	else //case if the value is less than the value of the current Node
+		if the left node is null
+			create a temporary pointer to this current node
+			make right node point at new Node
+			set the right node's parent pointer to the temporary
+		else
+			set the current node to the left node pointer
+			return
+
+3a.
+                  8
+            3          6
+         0     2     4
+
+3b.
+
+Array
+ 0 1 2 3 4 5 <-array position
+|8|3|6|0|2|4| <- actual array
+
+3c.
+                  6
+            3          4
+         0     2 
+
+4a. O(C + S)
+4b. O(logC + S)
+4c. O(logC + logS)
+4d. O(1 + logS) = O(logS)
+4e. O(1 + 1) = O(1)
+4f. O(logC + S)
+4g. O(1 + SlogS) = O(SlogS)
+4h. O(C + logS)

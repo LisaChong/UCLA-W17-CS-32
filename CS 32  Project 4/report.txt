@@ -1,0 +1,25 @@
+Lisa Chong
+Professor Smallberg
+March 16, 2017
+
+MyMap:
+associate()
+	If the map is associating N items, it is O(logN).
+find()
+	If the map is finding an item in a MyMap of N items, it is O(logN).
+
+AttractionMapper:
+init()
+	For a map of N streetsegments and S attractions per segment and P length of name for each attraction, it is O(N*S*P).
+getGeoCoord()
+	For a string of S characters and a map of N items, it will take O(S + logN).
+
+SegmentMapper:
+init()
+	If there are N StreetSegments, S attractions per segment, it will take O(NlogN + SlogS).
+getSegments()
+	If there are N segments, it will take O(logN).
+
+Navigator:
+navigate()
+	If there are N segments, and the path is on average S segments apart, it will take O(N + S).
